@@ -1,0 +1,387 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+        <!-- Features Start -->
+        <div class="container-fluid features mb-5">
+            <div class="container py-5">
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="row g-4 align-items-center features-item">
+                            <div class="col-4">
+                                <div class="rounded-circle position-relative">
+                                    <div class="overflow-hidden rounded-circle">
+                                        <img src="/static/img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                    </div>
+                                    <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="features-content d-flex flex-column">
+                                    <p class="text-uppercase mb-2">Sports</p>
+                                    <a href="#" class="h6">
+                                        Get the best speak market, news.
+                                    </a>
+                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="row g-4 align-items-center features-item">
+                            <div class="col-4">
+                                <div class="rounded-circle position-relative">
+                                    <div class="overflow-hidden rounded-circle">
+                                        <img src="/static/img/features-technology.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                    </div>
+                                    <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="features-content d-flex flex-column">
+                                    <p class="text-uppercase mb-2">Technology</p>
+                                    <a href="#" class="h6">
+                                        Get the best speak market, news.
+                                    </a>
+                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="row g-4 align-items-center features-item">
+                            <div class="col-4">
+                                <div class="rounded-circle position-relative">
+                                    <div class="overflow-hidden rounded-circle">
+                                        <img src="/static/img/features-fashion.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                    </div>
+                                    <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="features-content d-flex flex-column">
+                                    <p class="text-uppercase mb-2">Fashion</p>
+                                    <a href="#" class="h6">
+                                        Get the best speak market, news.
+                                    </a>
+                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="row g-4 align-items-center features-item">
+                            <div class="col-4">
+                                <div class="rounded-circle position-relative">
+                                    <div class="overflow-hidden rounded-circle">
+                                        <img src="/static/img/features-life-style.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                    </div>
+                                    <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="features-content d-flex flex-column">
+                                    <p class="text-uppercase mb-2">Life Style</p>
+                                    <a href="#" class="h6">
+                                        Get the best speak market, news.
+                                    </a>
+                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Features End -->
+
+
+        <!-- Main Post Section Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="row g-4">
+                    <div class="col-lg-7 col-xl-8 mt-0">
+                        <div class="position-relative overflow-hidden rounded">
+                            <img src= "{{ important_article.image.url }}"  class="img-fluid rounded img-zoomin w-100" alt="">
+                            <div class="d-flex justify-content-center px-4 position-absolute flex-wrap" style="bottom: 10px; left: 0;">
+                                <a href="" class="text-white me-3 link-hover"><i class="fa fa-clock"></i> {{ important_article.reading_time }} o'qiladi</a>
+                                <a href="#" class="text-white me-3 link-hover"><i class="fa fa-eye"></i>  {{ important_article.views }} ko'rildi</a>
+                                <a href="#" class="text-white me-3 link-hover"><i class="fa fa-comment-dots"></i> {{ important_article.comment_set.count }} izohlar</a>
+                                <a href="#" class="text-white link-hover"><i class="fa fa-calendar"></i> {{ important_article.created_at|date:"d.m.Y" }}</a>
+                            </div>
+                        </div>
+                        <div class="border-bottom py-3">
+                            <a href="{% url 'article_details' important_article.slug %}" class="display-4 text-dark mb-0 link-hover">{{ important_article.title|truncatechars:50 }} </a>
+                        </div>
+                        <p class="mt-3 mb-4">{{ important_article.intro|truncatechars:200 }}
+                        </p>
+                        <div class="bg-light p-4 rounded">
+                            <div class="news-2">
+                                <h3 class="mb-4">Ko'p ko'rilgan</h3>
+                            </div>
+                            <div class="row g-4 align-items-center">
+                                <div class="col-md-6">
+                                    <div class="rounded overflow-hidden">
+                                        <img src="{{ top_articles.0.image.url }}" class="img-fluid rounded img-zoomin w-100" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex flex-column">
+                                        <a href="{% url 'article_details' top_articles.0.slug %}" class="h3">{{ top_articles.0.title|truncatechars:50 }}</a>
+                                        <p class="mb-0 fs-5"><i class="fa fa-clock">{{ top_articles.0.reading_time }} o'qiladi</i> </p>
+                                        <p class="mb-0 fs-5"><i class="fa fa-eye">{{ top_articles.0.views }} ko'rildi</i></p>
+                                        <p class="mb-0 fs-5"><i class="fa fa-comment">{{ top_articles.0.comment_set.all.count }} </i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-xl-4">
+                       <div class="bg-light rounded p-4 pt-0">
+                            <div class="row g-4">
+                                <div class="col-12">
+                                    <div class="rounded overflow-hidden">
+                                        <img src="{{ top_articles.1.image.url }}" class="img-fluid rounded img-zoomin w-100" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex flex-column">
+                                        <a href="{% url 'article_details' top_articles.1.slug %}" class="h4 mb-2">{{ top_articles.1.title|truncatechars:60}}</a>
+                                        <p class="fs-5 mb-0"><i class="fa fa-clock">{{ top_articles.1.reading_time}} o'qiladi</i> </p>
+                                        <p class="fs-5 mb-0"><i class="fa fa-eye"> {{ top_articles.1.views }} ko'rildi</i></p>
+                                    </div>
+                                </div>
+                                {% for article in top_articles|slice:"2:10" %}
+                                <div class="col-12">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-5">
+                                            <div class="overflow-hidden rounded">
+                                                <img src="{{ article.image.url }}" class="img-zoomin img-fluid rounded w-100" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="features-content d-flex flex-column">
+                                                <a href="{% url 'article_details' article.slug %}" class="h6">{{ article.title|truncatechars:40}}</a>
+                                                <small><i class="fa fa-clock">{{ article.reading_time}} o'qiladi</i> </small>
+                                                <small><i class="fa fa-eye"> {{ article.views }} ko'rildi</i></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Post Section End -->
+
+
+        <!-- Banner Start -->
+        <div class="container-fluid py-5 my-5" style="background: linear-gradient(rgba(202, 203, 185, 1), rgba(202, 203, 185, 1));">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <h1 class="mb-4 text-primary">DailyUZ</h1>
+                        <h1 class="mb-4">Har kunlik xabarlarni kuzatib boring...</h1>
+                        <p class="text-dark mb-4 pb-2">Har kunlik xabarlarni kuzatib borish — bu dunyodan orqada qolmaslikning eng yaxshi yo‘lidir.
+Yangiliklar inson tafakkurini kengaytiradi va fikrlash doirasini boyitadi.
+Shuning uchun har kuni oz bo‘lsa ham yangilik o‘qish foydali odatdir.
+                        </p>
+                        <form class="position-relative mx-auto" method="post">
+                            {% csrf_token %}
+                            <input class="form-control w-100 py-3 rounded-pill" name="email" type="email" placeholder="Emailingizni kiritng">
+                            <button type="submit" class="btn btn-primary py-3 px-5 position-absolute rounded-pill text-white h-100" style="top: 0; right: 0;">Obuna bo'ling</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="rounded">
+                            <img src="../../../Desktop/html-magazine-template/html-magazine-template/img/banner-img.jpg" class="img-fluid rounded w-100 rounded" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Banner End -->
+
+
+        <!-- Latest News Start -->
+        <div class="container-fluid latest-news py-5">
+            <div class="container py-5">
+                <h2 class="mb-4">So'nggi xabarlar</h2>
+                <div class="latest-news-carousel owl-carousel">
+
+                    {% for last in latest_articles %}
+                    <div class="latest-news-item">
+                        <div class="bg-light rounded">
+                            <div class="rounded-top overflow-hidden">
+                                <img src="{{ last.image.url }}" class="" alt="">
+                            </div>
+                            <div class="d-flex flex-column p-4">
+                                <a href="#" class="h4">{{ last.title|truncatechars:30}}</a>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="small text-body link-hover">Muallif:{{ last.author }}</a>
+                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>{{last.created_at|date:"d.m.Y" }} da joylangan</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Latest News End -->
+
+
+        <!-- Most Populer News Start -->
+        <div class="container-fluid populer-news py-5">
+            <div class="container py-5">
+                <div class="tab-class mb-4">
+                    <div class="row g-4">
+                        <div class="col-lg-8 col-xl-9">
+                            <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mb-4">
+                                <h1 class="mb-4">So'ngi yangiliklar</h1>
+                            </div>
+                            <div class="tab-content mb-4">
+                                <div id="tab-1" class="tab-pane fade show p-0 active">
+                                    <div class="row g-4">
+                                        <div class="col-lg-8">
+                                            <div class="position-relative rounded overflow-hidden">
+                                                <img src=" {{ latest_articles.0.image.url }}" class="img-zoomin img-fluid rounded w-100" alt="">
+                                                <div class="position-absolute text-white px-4 py-2 bg-primary rounded" style="top: 20px; right: 20px;">                                              
+                                                    {{  latest_articles.0.category }}
+                                                </div>
+                                            </div>
+                                            <div class="my-4">
+                                                <a href="#" class="h4">{{ latest_articles.0.title }}</a>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <a href="#" class="text-dark link-hover me-3"><i class="fa fa-clock"></i> {{ latest_articles.0.reading_time }} o'qiladi </a>
+                                                <a href="#" class="text-dark link-hover me-3"><i class="fa fa-eye"></i> {{ latest_articles.0.views }} ko'rildi</a>
+                                                <a href="#" class="text-dark link-hover me-3"><i class="fa fa-comment-dots"></i> {{ latest_articles.0.comment_set.count }} izohlar</a>
+                                                <a href="#" class="text-dark link-hover"><i class="fa fa-arrow-up"></i> {{ latest_articles.0.created_at|date:"d.m.Y" }}</a>
+                                            </div>
+                                            <p class="my-4"> {{ latest_articles.0.intro }}</p>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            {% for top in top_articles %}
+                                                <div class="row g-4">
+                                                    <div class="col-12">
+                                                        <div class="row g-4 align-items-center">
+                                                            <div class="col-5">
+                                                                <div class="overflow-hidden rounded">
+                                                                    <img src="{{ top.image.url }}" class="img-zoomin img-fluid rounded w-100" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <div class="features-content d-flex flex-column">
+                                                                    <p class="text-uppercase mb-2">{{ top.category }}</p>
+                                                                    <a href="#" class="h6">{{ top.title|truncatechars:40 }}</a>
+                                                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> {{ top.created_at }}</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-bottom mb-4">
+                            </div>
+                            <div class="mt-5 lifestyle">
+                                <div class="border-bottom mb-4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-xl-3">
+                            <div class="row g-4">
+                                <div class="col-12">
+                                    <div class="p-3 rounded border">
+                                        <h4 class="mb-4">Bizni kuzatib boring</h4>
+                                        <div class="row g-4">
+                                            <div class="col-12">
+                                                <a href="#" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
+                                                    <i class="fab fa-facebook-f btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">13,977 Fans</span>
+                                                </a>
+                                                <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
+                                                    <i class="fab fa-twitter btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">21,798 Follower</span>
+                                                </a>
+                                                <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
+                                                    <i class="fab fa-youtube btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">7,999 Subscriber</span>
+                                                </a>
+                                                <a href="#" class="w-100 rounded btn btn-dark d-flex align-items-center p-3 mb-2">
+                                                    <i class="fab fa-instagram btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">19,764 Follower</span>
+                                                </a>
+                                                <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
+                                                    <i class="bi-cloud btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">31,999 Subscriber</span>
+                                                </a>
+                                                <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-4">
+                                                    <i class="fab fa-dribbble btn btn-light btn-square rounded-circle me-3"></i>
+                                                    <span class="text-white">37,999 Subscriber</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <h4 class="my-4">Ko'p ko'rilgan</h4>
+
+                                        <div class="row g-4">
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center features-item">
+                                                    <div class="col-4">
+                                                        <div class="rounded-circle position-relative">
+                                                            <div class="overflow-hidden rounded-circle">
+                                                                <img src="{{ top_articles.0.image.url }} " class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                            </div>
+                                                            <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2"></p>
+                                                            <a href="#" class="h6">
+                                                                {{ top_articles.0.title }}
+                                                            </a>
+                                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> {{ top_articles.0.created_at }}</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <a href="" class="link-hover btn border border-primary rounded-pill text-dark w-100 py-3 mb-4">Ko'proq ko'rish</a>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="border-bottom my-3 pb-3">
+                                                    <h4 class="mb-0">Taglar</h4>
+                                                </div>
+                                                <ul class="nav nav-pills d-inline-flex text-center mb-4">
+                                                    {% for tag in tags %}
+                                                        <li class="nav-item mb-3">
+                                                            <a class="d-flex py-2 bg-light rounded-pill me-2" href="#">
+                                                                <span class="text-dark link-hover" style="width: 90px;">{{ tag.name }}</span>
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Most Populer News End -->
+
+{% endblock %}

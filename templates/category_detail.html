@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-4">
+    <h2 class="text-center mb-4">📰 So‘nggi maqolalar</h2>
+
+    <div class="row g-4">
+        {% for article in articles|slice:":3" %}
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100 border-0 rounded-3 overflow-hidden">
+                    <img src="{{ article.image.url }}" class="card-img-top img-zoomin" alt="{{ article.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark fw-bold">{{ article.title|truncatechars:60 }}</h5>
+                        <p class="text-muted small mb-2">
+                            <i class="bi bi-calendar3"></i> {{ article.created_at|date:"d M Y" }} &nbsp;•&nbsp;
+                            <i class="bi bi-clock"></i> {{ article.reading_time }} o'qiadi
+                        </p>
+                        <p class="card-text text-secondary" style="font-size: 0.95rem;">
+                            {{ article.intro|truncatechars:120 }}
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <a href="{% url 'article_details' article.slug %}" class="btn btn-outline-primary btn-sm rounded-pill px-3">O‘qish</a>
+                            <small class="text-muted"><i class="bi bi-eye"></i> {{ article.views }} ko'rildi</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-center text-muted">Hozircha maqolalar yo‘q.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
