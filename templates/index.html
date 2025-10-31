@@ -13,18 +13,17 @@
                             <div class="col-4">
                                 <div class="rounded-circle position-relative">
                                     <div class="overflow-hidden rounded-circle">
-                                        <img src="/static/img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                        <img src="{{ important_article1.image.url }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                     </div>
-                                    <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                 </div>
                             </div>
                             <div class="col-8">
                                 <div class="features-content d-flex flex-column">
-                                    <p class="text-uppercase mb-2">Sports</p>
-                                    <a href="#" class="h6">
-                                        Get the best speak market, news.
+                                    <p class="text-uppercase mb-2">{{ important_article1.category.name }}</p>
+                                    <a href="{% url 'article_details' important_article1.slug %}" class="h6">
+                                        {{ important_article1.title|truncatechars:40 }}
                                     </a>
-                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>{{ important_article1.created_at|date:"d.m.Y" }}</small>
                                 </div>
                             </div>
                         </div>
@@ -34,18 +33,17 @@
                             <div class="col-4">
                                 <div class="rounded-circle position-relative">
                                     <div class="overflow-hidden rounded-circle">
-                                        <img src="/static/img/features-technology.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                        <img src="{{ important_article2.image.url }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                     </div>
-                                    <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                 </div>
                             </div>
                             <div class="col-8">
                                 <div class="features-content d-flex flex-column">
-                                    <p class="text-uppercase mb-2">Technology</p>
-                                    <a href="#" class="h6">
-                                        Get the best speak market, news.
+                                    <p class="text-uppercase mb-2">{{ important_article2.category.name }}</p>
+                                    <a href="{% url 'article_details' important_article2.slug %}" class="h6">
+                                        {{ important_article2.title|truncatechars:40 }}
                                     </a>
-                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>{{ important_article2.created_at|date:"d.m.Y" }}</small>
                                 </div>
                             </div>
                         </div>
@@ -55,18 +53,17 @@
                             <div class="col-4">
                                 <div class="rounded-circle position-relative">
                                     <div class="overflow-hidden rounded-circle">
-                                        <img src="/static/img/features-fashion.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                        <img src="{{ important_article3.image.url }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                     </div>
-                                    <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                 </div>
                             </div>
                             <div class="col-8">
                                 <div class="features-content d-flex flex-column">
-                                    <p class="text-uppercase mb-2">Fashion</p>
-                                    <a href="#" class="h6">
-                                        Get the best speak market, news.
+                                    <p class="text-uppercase mb-2">{{ important_article3.category.name }}</p>
+                                    <a href="{% url 'article_details' important_article3.slug %}" class="h6">
+                                        {{ important_article3.title|truncatechars:40 }}
                                     </a>
-                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>{{ important_article3.created_at|date:"d.m.Y" }}</small>
                                 </div>
                             </div>
                         </div>
@@ -76,18 +73,17 @@
                             <div class="col-4">
                                 <div class="rounded-circle position-relative">
                                     <div class="overflow-hidden rounded-circle">
-                                        <img src="/static/img/features-life-style.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                        <img src="{{ important_article4.image.url }}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
                                     </div>
-                                    <span class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute" style="top: 10%; right: -10px;">3</span>
                                 </div>
                             </div>
                             <div class="col-8">
                                 <div class="features-content d-flex flex-column">
-                                    <p class="text-uppercase mb-2">Life Style</p>
-                                    <a href="#" class="h6">
-                                        Get the best speak market, news.
+                                    <p class="text-uppercase mb-2">{{ important_article4.category.name }}</p>
+                                    <a href="{% url 'article_details' important_article4.slug %}" class="h6">
+                                        {{ important_article4.title|truncatechars:40 }}
                                     </a>
-                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>{{ important_article4.created_at|date:"d.m.Y" }}</small>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +195,7 @@ Shuning uchun har kuni oz bo‘lsa ham yangilik o‘qish foydali odatdir.
                     </div>
                     <div class="col-lg-5">
                         <div class="rounded">
-                            <img src="../../../Desktop/html-magazine-template/html-magazine-template/img/banner-img.jpg" class="img-fluid rounded w-100 rounded" alt="">
+                            <img src="/static/img/banner-img.jpg" class="img-fluid rounded w-100 rounded" alt="">
                         </div>
                     </div>
                 </div>
@@ -308,27 +304,27 @@ Shuning uchun har kuni oz bo‘lsa ham yangilik o‘qish foydali odatdir.
                                             <div class="col-12">
                                                 <a href="#" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
                                                     <i class="fab fa-facebook-f btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">13,977 Fans</span>
+                                                    <span class="text-white">13,977 Obunachi</span>
                                                 </a>
                                                 <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
                                                     <i class="fab fa-twitter btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">21,798 Follower</span>
+                                                    <span class="text-white">21,798 Obunachi</span>
                                                 </a>
                                                 <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
                                                     <i class="fab fa-youtube btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">7,999 Subscriber</span>
+                                                    <span class="text-white">7,999 Obunachi</span>
                                                 </a>
                                                 <a href="#" class="w-100 rounded btn btn-dark d-flex align-items-center p-3 mb-2">
                                                     <i class="fab fa-instagram btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">19,764 Follower</span>
+                                                    <span class="text-white">19,764 Obunachi</span>
                                                 </a>
                                                 <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
                                                     <i class="bi-cloud btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">31,999 Subscriber</span>
+                                                    <span class="text-white">31,999 Obunachi</span>
                                                 </a>
                                                 <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-4">
                                                     <i class="fab fa-dribbble btn btn-light btn-square rounded-circle me-3"></i>
-                                                    <span class="text-white">37,999 Subscriber</span>
+                                                    <span class="text-white">37,899 Obunachi</span>
                                                 </a>
                                             </div>
                                         </div>

@@ -20,6 +20,10 @@ class HomeView(View):
         latest_articles = Article.objects.order_by('-created_at')[:10]
         categories = Category.objects.all()
         tags = Tag.objects.all()
+        important_article1 = Article.objects.filter(category__name='Jahon').order_by('-created_at').first()
+        important_article2 = Article.objects.filter(category__name='Avto').order_by('-created_at').first()
+        important_article3 = Article.objects.filter(category__name='Texnologiya').order_by('-created_at').first()
+        important_article4 = Article.objects.filter(category__name='Iqtisodiyot').order_by('-created_at').first()
 
         context = {
             'important_article': important_article,
@@ -27,6 +31,10 @@ class HomeView(View):
             'latest_articles': latest_articles,
             'categories': categories,
             'tags': tags,
+            'important_article1': important_article1,
+            'important_article2': important_article2,
+            'important_article3': important_article3,
+            'important_article4': important_article4,
         }
 
         return render(request, 'index.html', context)
@@ -36,14 +44,19 @@ class HomeView(View):
         Newsletter.objects.create(email=request.POST['email'])
         return redirect('home')
 
+
 class ArticleDetailView(View):
     def get(self, request, slug):
         article = get_object_or_404(Article, slug=slug)
         contexts = Context.objects.filter(article=article)
+        categories = Category.objects.all()
+        tags = Tag.objects.all()
 
         context = {
             'article': article,
             'contexts': contexts,
+            'categories': categories,
+            'tags': tags,
         }
 
         return render(request, 'detail-page.html', context)
